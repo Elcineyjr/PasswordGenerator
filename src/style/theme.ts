@@ -3,17 +3,13 @@ import { DefaultTheme } from 'styled-components';
 const DarkTheme = {
   title: 'dark',
   colors: {
-    primary: '#191a21',
-
+    black: '#000000',
+    white: '#ffffff',
     background: '#13141f',
 
     tabs: {
       background: '#2f314d',
-      username: '#FFFFFF',
-      link: '#03cada',
-      score: '#7b6490',
-      button: '#8c56c2',
-      buttonText: '#FFFFFF',
+      tab: '#6428a8c0',
     },
 
     text: '#ffffff',

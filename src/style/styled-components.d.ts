@@ -4,17 +4,13 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     title: string;
     colors: {
-      primary: string;
-
+      black: string;
+      white: string;
       background: string;
 
       tabs: {
         background: string;
-        username: string;
-        link: string;
-        score: string;
-        button: string;
-        buttonText: string;
+        tab: string;
       };
 
       text: string;
