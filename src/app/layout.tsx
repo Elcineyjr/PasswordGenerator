@@ -1,5 +1,8 @@
 import '@/style/globals.css';
 import StyledComponentsRegistry from '@/style/registry';
+import '@mantine/core/styles.css';
+
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -18,8 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body className={inter.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <MantineProvider>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </MantineProvider>
       </body>
     </html>
   );
