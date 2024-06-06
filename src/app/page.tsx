@@ -1,5 +1,6 @@
 'use client';
 
+import PasswordGenerator from '@/components/PasswordGenerator';
 import PasswordOutput from '@/components/PasswordOutput';
 import DarkTheme from '@/style/theme';
 import { Tabs } from '@mantine/core';
@@ -24,7 +25,7 @@ export default function Home() {
 
             <Tabs.Panel value="password">
               <TabContent>
-                <PasswordOutput password="adpfhasudfhasd" />
+                <PasswordGenerator />
               </TabContent>
             </Tabs.Panel>
 
@@ -63,6 +64,7 @@ const MainContainer = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.colors.tabs.background};
   border-radius: 6px;
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 1);
 
   .tab:hover {
     background-color: ${(props) => props.theme.colors.tabs.tab};

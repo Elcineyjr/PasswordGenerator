@@ -27,6 +27,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   border: 1px solid gray;
+  border-radius: 12px;
 `;
 
 const Text = styled.div``;

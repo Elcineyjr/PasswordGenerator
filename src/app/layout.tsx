@@ -22,10 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="dark" />
       </head>
       <body className={inter.className}>
-        <MantineProvider>
+        <MantineProvider defaultColorScheme="dark">
           <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         </MantineProvider>
       </body>
