@@ -1,7 +1,7 @@
 'use client';
 
+import PassphraseGenerator from '@/components/PassphraseGenerator';
 import PasswordGenerator from '@/components/PasswordGenerator';
-import PasswordOutput from '@/components/PasswordOutput';
 import DarkTheme from '@/style/theme';
 import { Tabs } from '@mantine/core';
 import styled, { ThemeProvider } from 'styled-components';
@@ -31,7 +31,7 @@ export default function Home() {
 
             <Tabs.Panel value="passphrase">
               <TabContent>
-                <PasswordOutput password="very-hard-password" />
+                <PassphraseGenerator />
               </TabContent>
             </Tabs.Panel>
           </Tabs>

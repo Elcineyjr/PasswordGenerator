@@ -1,48 +1,61 @@
 'use client';
 
-import { generatePassword } from '@/password';
-import { Button, Checkbox, Slider } from '@mantine/core';
-import { useForm } from '@mantine/form';
+import { generatePassphrase } from '@/password';
+import { Button, Checkbox, Slider, TextInput } from '@mantine/core';
+import { matches, useForm } from '@mantine/form';
 import { useState } from 'react';
 import styled from 'styled-components';
 import PasswordOutput from './PasswordOutput';
 
-export default function PasswordGenerator() {
-  const [password, setPassword] = useState<string>('');
+export default function PassphraseGenerator() {
+  const [passphrase, setPassphrase] = useState<string>('');
   const form = useForm({
     mode: 'uncontrolled',
     initialValues: {
-      length: 12,
+      wordsCount: 3,
+      separator: '-',
       upper: false,
       numbers: false,
-      symbols: false,
+    },
+    validate: {
+      separator: matches(
+        /^[\ .,:;!?\-+=#~_*()\[\]{}<>\/|@$%&]$/,
+        'Separator has to be one of these: .,:;! ?-+=#~_*(){}[]<>/|@$%&'
+      ),
     },
   });
 
   return (
     <Container>
-      <PasswordOutput password={password} />
+      <PasswordOutput password={passphrase} />
 
       <Form
         onSubmit={form.onSubmit((values) => {
-          setPassword(generatePassword(values));
+          setPassphrase(generatePassphrase(values));
         })}>
-        <h3>Password length</h3>
+        <h3>Number of words</h3>
         <Slider
-          min={4}
-          max={32}
+          min={2}
+          max={6}
           marks={[
-            { value: 8 },
-            { value: 12 },
-            { value: 16 },
-            { value: 20 },
-            { value: 24 },
-            { value: 28 },
+            { value: 2 },
+            { value: 3 },
+            { value: 4 },
+            { value: 5 },
+            { value: 6 },
           ]}
           color="violet"
           size="lg"
           thumbSize={24}
-          {...form.getInputProps('length')}
+          {...form.getInputProps('wordsCount')}
+        />
+
+        <TextInput
+          label="Separator"
+          labelProps={{}}
+          placeholder="-"
+          key={form.key('separator')}
+          {...form.getInputProps('separator')}
         />
 
         <Checkbox
@@ -60,14 +73,6 @@ export default function PasswordGenerator() {
           label="Include numbers"
           key={form.key('numbers')}
           {...form.getInputProps('numbers')}
-        />
-        <Checkbox
-          size="lg"
-          variant="outline"
-          color="violet"
-          label="Include symbols"
-          key={form.key('symbols')}
-          {...form.getInputProps('symbols')}
         />
 
         <Button type="submit" color="violet" size="lg">

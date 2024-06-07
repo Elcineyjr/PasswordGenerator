@@ -13,7 +13,12 @@ export default function PasswordOutput({ password }: PasswordOutputProps) {
     <Container>
       <h2>{password}</h2>
 
-      <ActionIcon variant="outline" color="violet" size="xl" ml="auto">
+      <ActionIcon
+        variant="transparent"
+        color="violet"
+        size="xl"
+        ml="auto"
+        mr="-6">
         <IconCopy size={32} />
       </ActionIcon>
     </Container>
@@ -28,6 +33,9 @@ const Container = styled.div`
   align-items: center;
   border: 1px solid gray;
   border-radius: 12px;
-`;
 
-const Text = styled.div``;
+  h2 {
+    margin-left: auto;
+    margin-right: -6px;
+  }
+`;

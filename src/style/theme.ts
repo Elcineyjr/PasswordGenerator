@@ -9,7 +9,7 @@ const DarkTheme = {
 
     tabs: {
       background: '#2f314d',
-      tab: '#6428a8c0',
+      tab: '#6428a87c',
     },
 
     text: '#ffffff',
