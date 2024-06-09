@@ -1,7 +1,7 @@
 'use client';
 
-import { ActionIcon } from '@mantine/core';
-import { IconCopy } from '@tabler/icons-react';
+import { ActionIcon, CopyButton } from '@mantine/core';
+import { IconCheck, IconCopy } from '@tabler/icons-react';
 import styled from 'styled-components';
 
 interface PasswordOutputProps {
@@ -13,14 +13,19 @@ export default function PasswordOutput({ password }: PasswordOutputProps) {
     <Container>
       <h2>{password}</h2>
 
-      <ActionIcon
-        variant="transparent"
-        color="violet"
-        size="xl"
-        ml="auto"
-        mr="-6">
-        <IconCopy size={32} />
-      </ActionIcon>
+      <CopyButton value={password} timeout={1000}>
+        {({ copied, copy }) => (
+          <ActionIcon
+            onClick={() => (password ? copy() : null)}
+            variant="transparent"
+            color="violet"
+            size="xl"
+            ml="auto"
+            mr="-6">
+            {copied ? <IconCheck size={32} /> : <IconCopy size={32} />}
+          </ActionIcon>
+        )}
+      </CopyButton>
     </Container>
   );
 }

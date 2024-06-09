@@ -19,8 +19,8 @@ export default function PassphraseGenerator() {
     },
     validate: {
       separator: matches(
-        /^[\ .,:;!?\-+=#~_*()\[\]{}<>\/|@$%&]$/,
-        'Separator has to be one of these: .,:;! ?-+=#~_*(){}[]<>/|@$%&'
+        /^[.,:;!?\-+=#~_*@$%&]$/,
+        'Separator has to be one of these: .,:;!?-+=#~_*@$%&'
       ),
     },
   });

@@ -3,7 +3,7 @@ import { EFFLongWordList } from './words';
 const lowerAlphabet = 'abcdefghijklmnopqrstuvwxyz';
 const upperAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numbersAlphabet = '0123456789';
-const symbolsAlphabet = ' .,:;!?-+=#~_*(){}[]<>/|@$%&';
+const symbolsAlphabet = '.,:;!?-+=#~_*@$%&';
 
 interface PasswordConfig {
   length: number;
