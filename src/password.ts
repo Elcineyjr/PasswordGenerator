@@ -33,7 +33,14 @@ export function generatePassword({
     .join('');
 
   let password = '';
-  for (let i = 0; i < length; i++) {
+
+  // Guarantees that password will not be missing one of the chosen config
+  if (upper) password += upperAlphabet[rand(upperAlphabet.length)];
+  if (numbers) password += numbersAlphabet[rand(numbersAlphabet.length)];
+  if (symbols) password += symbolsAlphabet[rand(symbolsAlphabet.length)];
+
+  const currentLength = password.length;
+  for (let i = 0; i < length - currentLength; i++) {
     password += shuffledAlphabet[rand(alphabet.length)];
   }
 
