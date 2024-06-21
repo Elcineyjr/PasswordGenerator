@@ -1,6 +1,8 @@
 # official Node.js image as the base  
 FROM node:21-alpine
 
+RUN mkdir -p /app
+
 # Set the working directory inside the container  
 WORKDIR /app  
 
