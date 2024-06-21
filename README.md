@@ -1,6 +1,10 @@
 # PasswordGenerator
 
-## 🚀 Overview
+## 🚀 Live Demo
+
+https://password-generator-seven-wheat.vercel.app/
+
+## 🔎 Overview
 
 A simple and intuitive web application to generate safe passwords. Customize your passwords with uppercase, lowercase, numbers and symbols to ensure maximum safety.
 
